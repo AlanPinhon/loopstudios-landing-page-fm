@@ -3,4 +3,51 @@
   --black: #000;
   --dark-gray: rgb(140, 140, 140);
   --very-dark-gray: rgb(105, 105, 105);
+
+  /* Fonts */
+
+  --alata-font: 'Alata', sans-serif;
+  --josefin-font: 'Josefin Sans', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body{
+  font-family: var(--josefin-font);
+  font-weight: 200;
+}
+
+main{
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 375px) {
+
+  main{
+    flex-direction: column;
+  }
+
+  .header{
+    width: 100vw;
+    background-image: url(/images/mobile/image-hero.jpg);
+  }
+
+  .vr-img{
+    width: 100%;
+  }
 }
