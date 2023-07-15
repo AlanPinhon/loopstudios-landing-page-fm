@@ -12,6 +12,8 @@ const handleMenu = () => {
     headerNav.classList.remove('show');
     menu.setAttribute('src','../images/icon-hamburger.svg');
   }
+
+  menu.classList.toggle('rotate')
 }
 
 

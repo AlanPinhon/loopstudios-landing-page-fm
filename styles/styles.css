@@ -34,6 +34,10 @@ main{
   background-size: cover;
 }
 
+.interactive-vr{
+  display: flex;
+}
+
 .nav-container{
   display: flex;
 }
@@ -60,11 +64,13 @@ a{
 
 
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 375px) {
 
   main{
     flex-direction: column;
   }
+
+  /* Header */
 
   .header{
     width: 100vw;
@@ -107,6 +113,11 @@ a{
 
   .menu-icon{
     z-index: 1000;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .menu-icon.rotate{
+    transform: rotate(90deg);
   }
 
   .nav-header ul{
@@ -121,6 +132,10 @@ a{
     font-size: 2rem;
   }
 
+  .nav-header ul li a:hover{
+    color: #ff9800;
+  }
+
   .slogan-container{
     margin: 9.5rem 1.5rem;
   }
@@ -133,4 +148,38 @@ a{
   .vr-img{
     width: 100%;
   }
+
+  /* Interactive VR Section */
+
+  .interactive-vr{
+    width: 100vw;
+    height: 650px;
+    padding: 0 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .vr-img,
+  .vr-info-container{
+    padding: 1.25rem 0;
+  }
+
+  .title{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .vr-text{
+    font-family: var(--alata-font);
+    font-size: 15px;
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.5rem;
+    color: var(--very-dark-gray);
+    padding: 0 1rem;
+  }
+  
 }
