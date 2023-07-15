@@ -16,16 +16,6 @@
   box-sizing: border-box;
 }
 
-ul{
-  list-style: none;
-}
-
-a{
-  color: var(--white);
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
 body{
   font-family: var(--josefin-font);
   font-weight: 200;
@@ -36,6 +26,40 @@ main{
   width: 100%;
 }
 
+.header{
+  display: flex;
+  background-image: url(/images/mobile/image-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav-container{
+  display: flex;
+}
+
+.slogan-container{
+  border: 2px solid var(--white);
+}
+
+.slogan{
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
 @media screen and (max-width: 375px) {
 
   main{
@@ -44,7 +68,66 @@ main{
 
   .header{
     width: 100vw;
-    background-image: url(/images/mobile/image-hero.jpg);
+    height: 650px;
+    flex-direction: column;
+  }
+
+  .nav-container{
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 1.5rem 0;
+  }
+
+  .nav-header{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .nav-header.show{
+    transform: translateX(0);
+  }
+
+  .no-scroll{
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .logo{
+    width: 45%;
+    z-index: 1001;
+  }
+
+  .menu-icon{
+    z-index: 1000;
+  }
+
+  .nav-header ul{
+    margin-left: 1.5rem;
+  }
+
+  .nav-header ul li{
+    padding: 1rem 0;
+  }
+
+  .nav-header ul li a{
+    font-size: 2rem;
+  }
+
+  .slogan-container{
+    margin: 9.5rem 1.5rem;
+  }
+
+  .slogan{
+    font-size: 2.5rem;
+    padding: 1.5rem;
   }
 
   .vr-img{
