@@ -24,229 +24,358 @@ body{
 
 main{
   display: flex;
+  flex-direction: column;
 }
 
+.container{
+  width: 90%;
+  max-width: 1100px;
+  margin: 5rem auto;
+}
+
+/* Header */
+
 .header{
-  display: flex;
-  background-image: url(/images/mobile/image-hero.jpg);
+  background-image: url(/images/desktop/image-hero.jpg);
+  width: 100%;
+  height: 650px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.interactive-vr{
-  display: flex;
-}
-
 .nav-container{
   display: flex;
+  height: 30px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  width: 180px;
+}
+
+.nav-header a,
+.nav-footer a,
+.media-icon{
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 400;
+  position: relative;
+
+  &::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--white);
+  bottom: -3px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .15s ease-in-out;
+  }
+
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+.nav-header a{
+  margin-left: 30px;
+}
+
+.menu-icon{
+  display: none;
 }
 
 .slogan-container{
+  margin-top: 8rem;
+  width: 700px;
   border: 2px solid var(--white);
 }
 
 .slogan{
   color: var(--white);
+  padding: 2.4rem 2.5rem;
+  font-size: 4.45rem;
+  font-weight: 300;
   text-transform: uppercase;
-  font-weight: 200;
 }
 
-ul{
-  list-style: none;
+
+/* Interactive VR */
+
+.interactive-vr{
+  display: flex;
+  position: relative;
+  align-items: flex-end;
 }
 
-a{
-  color: var(--white);
+.vr-img{
+  width: 730px;
+  height: 500px;
+  background-image: url(/images/desktop/image-interactive.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.vr-info-container{
+  position: absolute;
+  right: 0;
+  max-width: 530px;
+  padding: 6rem 0 0 5rem;
+  background-color: var(--white);
+}
+
+.title{
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 3.1rem;
+}
+
+.vr-text{
+  font-family: var(--alata-font);
+  line-height: 1.75;
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
+  color: var(--very-dark-gray);
+}
+
+/* Gallery */
+
+.creations-title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.see-all{
+  border: 2px solid var(--black);
+  font-family: var(--alata-font);
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  padding: .5rem 2.5rem;
+  font-weight: 400;
   text-decoration: none;
-  text-transform: uppercase;
-}
+  text-align: center;
+  color: var(--black);
+  transition: .1s ease-in-out;
 
-@media screen and (min-width: 414px) and (max-width: 767px) {
-  
-}
-
-
-
-@media screen and (max-width: 413px) {
-
-  main{
-    flex-direction: column;
+  &:hover{
+    color: var(--white);
+    background-color: var(--black);
+    cursor: pointer;;
   }
+}
 
+.see-all-last{
+  display: none;
+}
+
+.gallery-grid{
+  display: grid;
+  grid-template-areas:
+    "creations-img creations-img creations-img creations-img"
+    "creations-img creations-img creations-img creations-img"
+  ;
+  gap: 1.5rem;
+  margin: 5rem 0;
+}
+
+.creations-img{
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.gradient-box{
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  bottom: 0;
+  background: linear-gradient(0deg, rgb(0,0,0,.5), rgb(0,0,0,0));
+}
+
+.deep-earth{
+  background-image: url(/images/desktop/image-deep-earth.jpg);
+}
+
+.night-arcade{
+  background-image: url(/images/desktop/image-night-arcade.jpg);
+}
+
+.soccer-team{
+  background-image: url(/images/desktop/image-soccer-team.jpg);
+}
+
+.grid{
+  background-image: url(/images/desktop/image-grid.jpg);
+}
+
+.from-above{
+  background-image: url(/images/desktop/image-from-above.jpg);
+}
+
+.pocket-borealis{
+  background-image: url(/images/desktop/image-pocket-borealis.jpg);
+}
+
+.curiosity{
+  background-image: url(/images/desktop/image-curiosity.jpg);
+}
+
+.fisheye{
+  background-image: url(/images/desktop/image-fisheye.jpg);
+}
+
+.grid-img{
+  width: inherit;
+  height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hover-box{
+  position: relative;
+  width: inherit;
+  height: inherit;
+  bottom: 0;
+  padding: 1.5rem;
+  color: var(--white);
+  transition: .1s ease-in-out;
+
+  &:hover{
+    background-color: rgb(255,255,255,.5);
+    color: var(--black);
+    cursor: pointer;
+  }
+}
+
+.img-txt{
+  position: absolute;
+  bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+/* Footer */
+
+.footer{
+  width: 100%;
+  height: auto;
+  background-color: var(--black);
+}
+
+.footer-container{
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-container-footer,
+.social-media-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 49%;
+}
+
+.logo-footer{
+  width: 150px;
+}
+
+.nav-footer,
+.rights{
+  margin-top: 2rem;
+}
+
+.nav-footer a{
+  margin-right: 30px;
+}
+
+.social-media-container{
+  align-items: flex-end;
+}
+
+.media-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.media-icon{
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.rights{
+  color: var(--dark-gray);
+  font-family: var(--alata-font);
+}
+
+@media screen and (max-width: 950px) {
+
+  .container{
+    width: 85%;
+  }
+  
   /* Header */
 
-  .header{
-    width: 100vw;
-    height: 650px;
-    flex-direction: column;
-  }
-
-  .nav-container{
-    align-items: center;
-    justify-content: space-between;
-    padding: 2.5rem 1.5rem 0;
-  }
-
-  .nav-header{
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--black);
-    transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .nav-header.show{
-    transform: translateX(0);
-  }
-
-  .no-scroll{
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .logo{
-    width: 150px;
-    z-index: 1001;
-  }
-
-  .menu-icon{
-    z-index: 1000;
-    transition: transform 0.1s ease-in-out;
-  }
-
-  .menu-icon.rotate{
-    transform: rotate(90deg);
-  }
-
-  .nav-header ul{
-    margin-left: 1.5rem;
-  }
-
-  .nav-header ul li{
-    padding: 1rem 0;
-  }
-
-  .nav-header ul li a{
-    font-size: 2rem;
-  }
-
-  .nav-header ul li a:hover{
-    color: #ff9800;
-  }
-
   .slogan-container{
-    margin: 9.5rem 1.5rem;
+    width: 650px;
   }
 
-  .slogan{
-    font-size: 2.5rem;
-    padding: 1.5rem;
-    line-height: 2.35rem;
-  }
-
-  /* Interactive VR Section */
+  /* Interactive VR */
 
   .interactive-vr{
-    width: 100vw;
-    height: 700px;
-    padding: 0 1.5rem;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
-
-  .vr-img,
-  .vr-info-container{
-    padding: 1.5rem 0;
   }
 
   .vr-img{
-    width: 95%;
+    width: 650px;
+    height: 450px;
   }
 
-  .title{
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 300;
-    text-transform: uppercase;
+  .vr-info-container{
+    max-width: 100%;
+    position:relative;
+    left: 0;
+    padding: 3rem 5rem 0;
   }
 
+  .title,
   .vr-text{
-    font-family: var(--alata-font);
-    font-size: 15px;
     text-align: center;
-    font-weight: 300;
-    line-height: 1.5rem;
-    color: var(--dark-gray);
-    padding: 0 1rem;
   }
 
   /* Gallery */
 
-  .our-creations{
-    width: 100vw;
-    height: auto;
-    padding: 0 1.5rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .title-creations{
-    order: 1;
-  }
-
-  .see-all{
-    order: 3;
-    width: 10rem;
-    padding: .5rem;
-    font-family: var(--alata-font);
-    letter-spacing: .25rem;
-    font-weight: 300;
-    text-align: center;
-    text-transform: uppercase;
-    border: 1px solid var(--black);
-  }
-
   .gallery-grid{
-    width: 100%;
-    order: 2;
-    display: grid;
-    gap: 1.5rem 0;
-    margin: 2rem 0;
+    grid-template-areas:
+    "creations-img creations-img"
+    "creations-img creations-img"
+    "creations-img creations-img"
+    "creations-img creations-img"
+  ;
   }
 
   .creations-img{
     position: relative;
     width: 100%;
-    height: 7.65rem;
-    display: flex;
-    align-items: end;
-  }
-  
-  .gradient-box{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    background: linear-gradient(90deg,rgba(0, 0, 0, 0.6),rgba(255, 255, 255, 0));
+    height: 150px;
   }
 
-  .grid-img{
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .gradient-box{
+    background: linear-gradient(90deg, rgb(0,0,0,.6), rgb(0,0,0,0));
   }
 
   .deep-earth{
@@ -281,60 +410,233 @@ a{
     background-image: url(/images/mobile/image-fisheye.jpg);
   }
 
-  .img-txt{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    position: absolute;
-    color: var(--white);
-    padding: 0 0 1.5rem 1.5rem;
+  /* Footer */
+
+  .footer-container{
+    display: block;
+  }
+  
+  .nav-container-footer,
+  .social-media-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 2rem 0;
   }
 
-  /* Footer */
+  .nav-footer,
+  .rights{
+    margin-top: 0;
+  }
   
-  .footer{
-    width: 100vw;
+  .nav-footer a{
+    margin-right: 0;
+    margin-left: 30px;
+  }
+
+  .media-icon{
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .container{
+    width: 85%;
+    max-width: 600px;
+    margin: 3rem auto 0;
+  }
+  
+  /* Header */
+
+  .header{
+    background-image: url(/images/mobile/image-hero.jpg);
+  }
+
+  .slogan{
+    font-size: 3.25rem;
+    font-weight: 200;
+    padding: 1.5rem;
+  }
+
+  .nav-header{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: var(--black);
-    margin-top: 6rem;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .links-container{
+    width: 85%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    padding: 3rem 1.5rem;
+    justify-content: center;
+  }
+  
+  .nav-header.show{
+    transform: translateX(0);
+  }
+  
+  .no-scroll{
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .logo{
+    width: 135px;
+    z-index: 100;
+  }
+  
+  .menu-icon{
+    display: block;
+    z-index: 101;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  .menu-icon.rotate{
+    transform: rotate(90deg);
+  }
+  
+  .nav-header a{
+    font-size: 2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin: 1rem 0;
+
+    &::before{
+      content: none;
+    }
   }
 
-  .nav-container-footer{
+  .slogan-container{
+    width: 100%;
+  }
+
+  /* Interactive VR */
+
+  .title{
+    font-size: 2.5rem;
+  }
+
+  .vr-img{
+    width: 100%;
+    height: 350px;
+    background-image: url(/images/mobile/image-interactive.jpg);
+    background-size: contain;
+  }
+
+  .vr-info-container{
+    padding: 3rem 3rem 0;
+  }
+
+  /* Gallery */
+
+  .our-creations{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .creations-title-container{
+    justify-content: center;
+  }
+
+  .see-all{
+    display: none;
+  }
+
+  .see-all-last{
+    display: block;
+  }
+
+  .gallery-grid{
+    margin: 3rem 0;
+    width: 100%;
+  }
+  /* Footer */
+  
+  .nav-container-footer,
+  .social-media-container{
+    flex-direction: column;
+    justify-content: center;
   }
 
   .nav-footer{
-    padding: 1.25rem 0;
-  }
-
-  .nav-footer ul li{
-    margin: 1.25rem 0;
-    text-align: center;
-    font-family: var(--alata-font);
-  }
-
-  .nav-footer ul li a{
-    text-transform: capitalize;
-  }
-
-  .social-media-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 1rem;
   }
 
-  .social-media-container span{
-    font-family: var(--alata-font);
-    color: var(--dark-gray);
-    margin-top: 1rem;
+  .nav-footer a{
+    text-align: center;
+    margin: 1rem 0;
   }
 
-  .media-icons img{
-    margin: 0 .4rem;
+  .logo-footer{
+    margin-bottom: 2rem;
+  }
+
+  .media-icons{
+    margin-bottom: 1rem;
+  }
+
+  .rights{
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+@media screen and (max-width: 529px) {
+
+  /* Header */
+
+  .slogan{
+    font-size: 2.5rem;
+  }
+
+  /* Interactive VR Section */
+
+  .title{
+    font-size: 2rem;
+  }
+
+  .vr-img{
+    height: 250px;
+  }
+
+  .vr-info-container{
+    padding: 3rem 1rem 0;
+  }
+
+  /* Gallery */
+
+  .gallery-grid{
+    grid-template-areas:
+    "creations-img"
+    "creations-img"
+    "creations-img"
+    "creations-img"
+    "creations-img"
+    "creations-img"
+    "creations-img"
+    "creations-img"
+  ;
+  }
+
+  .creations-img{
+    height: 125px;
   }
 
 }
